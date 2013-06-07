@@ -1,15 +1,29 @@
 package com.example.gezondheidapp;
 
-import android.os.Bundle;
 import android.app.Activity;
+import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
 		setContentView(R.layout.activity_main);
+		
+		final Button behBtn = (Button) findViewById(R.id.button1);
+		behBtn.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Toast t = Toast.makeText(getApplicationContext(), "Mike's boas", Toast.LENGTH_SHORT);
+				t.show();
+			}
+		});
 	}
 
 	@Override
